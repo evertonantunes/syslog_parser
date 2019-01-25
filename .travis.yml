@@ -1,6 +1,6 @@
 language: cpp
 compiler: gcc
-dist: cosmic
+dist: xenial
 
 before_install:
   # C++17
