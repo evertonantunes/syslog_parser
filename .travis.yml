@@ -12,7 +12,7 @@ install:
   - sudo apt-get install -qq g++-7
   - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-7 90
   - sudo pip install --upgrade pip
-  - sudo pip install conan
+  - sudo pip install --ignore-installed conan
   - conan user
 
 script:
