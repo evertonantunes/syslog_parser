@@ -16,7 +16,10 @@ install:
   - conan user
 
 script:
-  - conan install .
+  - conan remote add eao https://eao.bintray.com/conan
+  - conan user $USER -r eao -p $PASSWORD
+  - conan install . --build=missing
+  - conan upload boost/1.66.0@conan/stable -r=eao --all
   - mkdir build
   - cd build
   - cmake ..
