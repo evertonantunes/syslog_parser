@@ -1,6 +1,5 @@
 [requires]
 boost/1.66.0@conan/stable
-OpenSSL/1.0.2o@conan/stable
 catch2/2.4.1@bincrafters/stable
 
 [options]
