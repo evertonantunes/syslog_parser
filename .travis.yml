@@ -9,19 +9,13 @@ before_install:
 
 install: 
   # C++17
-  - sudo apt-get install -qq g++-7
+  - sudo apt-get install -qq gcc-7 g++-7
   - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-7 90
+  - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/gcc-7 90
   - sudo pip install --upgrade pip
   - sudo pip install --ignore-installed conan
   - conan user
 
 script:
-  - conan remote add remote_repository $REPOSITORY
-  # conan user $USER -r remote_repository -p $PASSWORD
-  - conan install . --build=missing
-  - conan upload boost/1.66.0@conan/stable -r=remote_repository --all
-  - mkdir build
-  - cd build
-  - cmake ..
-  - cmake --build . --target all
-  - cmake --build . --target test
+  - chmod +x .travis/run.sh
+  - ./.travis/run.sh

@@ -1,8 +1,8 @@
 project(syslog_parser)
 cmake_minimum_required(VERSION 3.10)
 
-if (EXISTS conanbuildinfo.cmake)
-    include(conanbuildinfo.cmake)
+if (EXISTS ${CMAKE_SOURCE_DIR}/conanbuildinfo.cmake)
+    include(${CMAKE_SOURCE_DIR}/conanbuildinfo.cmake)
     conan_basic_setup()
 endif()
 

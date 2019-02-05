@@ -21,7 +21,10 @@ SET( SOURCES sources/main.cpp )
 ADD_EXECUTABLE(${PROJECT_NAME} ${HEADERS} ${SOURCES})
 
 target_link_libraries(${PROJECT_NAME} -lasan -lpthread)
-conan_target_link_libraries(${PROJECT_NAME})
+
+if(COMMAND conan_target_link_libraries)
+    conan_target_link_libraries(${PROJECT_NAME})
+endif()
 
 add_custom_target( run_test
                 COMMAND  ${PROJECT_NAME} --reporter junit --out ${CMAKE_SOURCE_DIR}/report.xml
