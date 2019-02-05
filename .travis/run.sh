@@ -11,6 +11,7 @@ if [[ "$(uname -s)" == 'Darwin' ]]; then
 fi
 
 conan remote clean
+conan remove add conan_center https://conan.bintray.com
 conan remote add remote_repository $REPOSITORY
 conan user $USER -r remote_repository -p $API_KEY
 
