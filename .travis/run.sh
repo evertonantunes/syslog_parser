@@ -15,7 +15,7 @@ conan remote add conan_center https://conan.bintray.com
 conan remote add remote_repository $REPOSITORY
 conan user $USER -r remote_repository -p $API_KEY
 
-conan install . --build=missing
+conan install . -s compiler.libcxx=libstdc++11 --build=missing
 conan upload boost/1.66.0@conan/stable -r=remote_repository --all
 
 mkdir -p ./build
