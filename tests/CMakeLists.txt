@@ -26,6 +26,9 @@ if(COMMAND conan_target_link_libraries)
     conan_target_link_libraries(${PROJECT_NAME})
 endif()
 
+enable_testing()
+add_test(MyTest ${PROJECT_NAME})
+
 add_custom_target( run_test
                 COMMAND  ${PROJECT_NAME} --reporter junit --out ${CMAKE_SOURCE_DIR}/report.xml
                 COMMENT "${PROJECT_NAME} --reporter junit --out ${CMAKE_SOURCE_DIR}/report.xml"
