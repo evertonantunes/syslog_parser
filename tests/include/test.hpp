@@ -189,7 +189,6 @@ TEST_CASE( "minimal message containing structured data", "" )
     REQUIRE( event.structured_data.size() == 1 );
     REQUIRE( event.message == "BOMAn application event log entry" );
 
-
 }
 
 //TEST_CASE( "D", "" )
